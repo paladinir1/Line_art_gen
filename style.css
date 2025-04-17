@@ -28,6 +28,8 @@
     width: 500px;
 }
 
+
+
 /* Responsive Canvas Size */
 .centerCanvasMedium, .centerCanvasLarge, canvas {
     padding-left: 0;
@@ -327,6 +329,20 @@ h5, small.text-muted {
     z-index: 1000;
     border: 1px solid transparent;
 }
+
+
+.crossed-out {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+/* #pinsOutput {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    padding: 5px;
+    white-space: pre-wrap;
+} */
 
 #pinsOutput {
     width: 100%;
