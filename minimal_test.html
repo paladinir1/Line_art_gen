@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minimal Test</title>
+    <style>
+        #numberOfLines {
+            color: #999;
+        }
+
+        #numberOfLines.focused {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <input
+        type="text"
+        id="numberOfLines"
+        data-placeholder="n° of lines"
+        value="n° of lines"
+    />
+
+    <script>
+        let MAX_LINES; // Removed initial assignment
+
+        function onPageLoad() {
+            let numberOfLines = document.getElementById("numberOfLines");
+            if (numberOfLines.value === '' || numberOfLines.value === numberOfLines.dataset.placeholder) {
+                MAX_LINES = 4000;
+                numberOfLines.value = MAX_LINES;
+            }
+        }
+
+        function testFunction() {
+            let numberOfLines = document.getElementById("numberOfLines");
+            if (numberOfLines.value === '' || numberOfLines.value === numberOfLines.dataset.placeholder) {
+                numberOfLines.value = MAX_LINES;
+            }
+        }
+
+        document.getElementById("numberOfLines").addEventListener('focus', function() {
+            this.classList.add("focused");
+            if (this.value === this.dataset.placeholder) {
+                this.value = '';
+            }
+        });
+
+        document.getElementById("numberOfLines").addEventListener('blur', function() {
+            this.classList.remove("focused");
+            if (this.value === '') {
+                this.value = this.dataset.placeholder;
+            }
+        });
+
+        window.addEventListener('load', onPageLoad);
+    </script>
+</body>
+</html>
